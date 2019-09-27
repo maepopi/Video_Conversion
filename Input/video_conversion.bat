@@ -6,6 +6,7 @@ set inputFolder=%~dp0..\Input
 
 set videoName=%~n1
 
+
 if exist "%1.gif" goto:gif
 if exist "%1.mov" goto:mov
 if exist "%1.wma" goto:wma
@@ -51,11 +52,13 @@ goto:done
 echo video_extension is %video_extension%
 
 
-"%ffmpegpath%" -i %1 %videoName%.%video_extension -pix_fmt yuv420p -crf 20 %videoName%.mp4
+
+"%ffmpegpath%" -i %1 %videoName%.mp4
 
 
 
 
+pause
 
 
 
